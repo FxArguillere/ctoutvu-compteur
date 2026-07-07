@@ -155,11 +155,34 @@
   .badge.finalist { background: var(--purple); color: #fff; }
 
   input, select {
-    background: var(--panel-2); border: 1px solid var(--border);
+    background: var(--panel-2); border: 1.5px solid rgba(255, 255, 255, 0.22);
     color: var(--text); padding: 9px 12px; border-radius: 8px; font-size: 14px;
     font-family: inherit; width: 100%;
   }
   input:focus, select:focus { outline: none; border-color: var(--accent); }
+  input::placeholder { color: rgba(255, 255, 255, 0.35); }
+
+  /* Onglets internes (par exemple setup Duos / Barème) */
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; background: var(--panel-2); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+  .tab-btn {
+    flex: 1; padding: 10px 14px; background: transparent; color: var(--muted);
+    border: none; border-radius: 7px; cursor: pointer; font-weight: 700;
+    font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.15s;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { background: var(--accent); color: #000; }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* Barème */
+  .rules-section { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 12px; }
+  .rules-section-title { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; margin-bottom: 10px; }
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .rule-item { display: flex; flex-direction: column; gap: 4px; }
+  .rule-item label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin: 0; }
+  .rule-item .rule-input-wrap { display: flex; align-items: center; gap: 6px; }
+  .rule-item input { flex: 1; }
+  .rule-item .rule-unit { color: var(--muted); font-weight: 700; font-size: 14px; }
   label { display: block; font-size: 12px; color: var(--muted); margin: 6px 0 4px 0; text-transform: uppercase; letter-spacing: 1px; }
   .field { margin-bottom: 10px; }
   .checkbox { display: flex; align-items: center; gap: 8px; cursor: pointer; }
@@ -295,11 +318,26 @@
   <section id="section-setup" class="active">
     <h2>Configuration de l'émission</h2>
     <div class="card">
-      <div class="duos-grid" id="setup-duos"></div>
-      <div id="cagnotte-reportee-block" style="display:none; margin-top:16px;">
-        <label>Cagnotte reportée du champion (€)</label>
-        <input type="number" id="cagnotte-reportee" min="0" value="0" style="max-width:200px;">
+      <div class="tabs">
+        <button class="tab-btn active" id="tab-btn-duos" onclick="switchSetupTab('duos')">Duos</button>
+        <button class="tab-btn" id="tab-btn-rules" onclick="switchSetupTab('rules')">Barème</button>
       </div>
+
+      <div id="tab-pane-duos" class="tab-pane active">
+        <div class="duos-grid" id="setup-duos"></div>
+        <div id="cagnotte-reportee-block" style="display:none; margin-top:16px;">
+          <label>Cagnotte reportée du champion (€)</label>
+          <input type="number" id="cagnotte-reportee" min="0" value="0" style="max-width:200px;">
+        </div>
+      </div>
+
+      <div id="tab-pane-rules" class="tab-pane">
+        <div id="rules-editor"></div>
+        <div style="text-align:center; margin-top:10px;">
+          <button class="btn ghost small" onclick="resetRules()">Rétablir les valeurs par défaut</button>
+        </div>
+      </div>
+
       <div class="actions">
         <div class="actions-left">
           <button class="btn ghost" onclick="loadFromHistory()">Charger émission</button>
@@ -315,9 +353,7 @@
   <section id="section-m1">
     <h2>Manche 1 — Le carré</h2>
     <div class="card">
-      <p style="color:var(--muted);font-size:13px;margin:0 0 12px 0;">
-        25 € par bonne réponse · Bonus 50 € si tableau complet (4/4) · Max 4 par duo
-      </p>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 12px 0;" id="m1-recap"></p>
       <div class="duos-grid" id="m1-duos"></div>
       <div class="actions">
         <div class="actions-left">
@@ -333,9 +369,7 @@
   <section id="section-m2">
     <h2>Manche 2 — La roulette</h2>
     <div class="card">
-      <p style="color:var(--muted);font-size:13px;margin:0 0 12px 0;">
-        25 € par bonne réponse · Bonus 50 € par série de 4 bonnes réponses à la suite
-      </p>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 12px 0;" id="m2-recap"></p>
       <div id="m2-duos"></div>
       <div class="actions">
         <div class="actions-left">
@@ -371,9 +405,7 @@
   <section id="section-m3">
     <h2>Manche 3 — La battle</h2>
     <div class="card">
-      <p style="color:var(--muted);font-size:13px;margin:0 0 12px 0;">
-        50 € par bonne réponse · Bonus 100 € si tableau complet (5/5) · 50 € par image volée · Bonus 100 € si tableau entièrement volé (5)
-      </p>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 12px 0;" id="m3-recap"></p>
       <div class="duos-grid two" id="m3-duos"></div>
       <div class="actions">
         <div class="actions-left">
@@ -455,7 +487,7 @@
 const STORAGE_KEY = 'ctv-compteur-v1';
 const HISTORY_KEY = 'ctv-history-v1';
 
-const RULES = {
+const DEFAULT_RULES = {
   M1: { perCorrect: 25, bonusFull: 50, tableauSize: 4 },
   M2: { perCorrect: 25, bonusStreak: 50, streakLength: 4 },
   PF2: { winnerPrize: 25 },
@@ -463,6 +495,22 @@ const RULES = {
   PF3: { winnerPrize: 50 },
   FINALE: { minToWin: 8, bonusThreshold: 10, bonusAmount: 500, jackpotThreshold: 12, jackpotAmount: 2500 }
 };
+
+// RULES accède au barème modifiable (state.rules) avec repli sur les défauts
+const RULES = new Proxy({}, {
+  get(_, section) {
+    return new Proxy({}, {
+      get(_, key) {
+        if (state && state.rules && state.rules[section] && state.rules[section][key] !== undefined) {
+          return state.rules[section][key];
+        }
+        return DEFAULT_RULES[section] ? DEFAULT_RULES[section][key] : undefined;
+      }
+    });
+  }
+});
+
+function deepCloneRules(r) { return JSON.parse(JSON.stringify(r)); }
 
 let state = null;
 let currentSection = 'setup';
@@ -474,6 +522,7 @@ function initState() {
   return {
     id: Date.now(),
     date: new Date().toISOString().split('T')[0],
+    rules: deepCloneRules(DEFAULT_RULES),
     duos: [
       { name: '', membre1: '', membre2: '', isChampion: false },
       { name: '', membre1: '', membre2: '', isChampion: false },
@@ -500,7 +549,13 @@ function initState() {
 
 function loadState() {
   const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) { try { state = JSON.parse(saved); return; } catch(e){} }
+  if (saved) {
+    try {
+      state = JSON.parse(saved);
+      if (!state.rules) state.rules = deepCloneRules(DEFAULT_RULES);
+      return;
+    } catch(e){}
+  }
   state = initState();
 }
 function saveState() { state.updatedAt = Date.now(); localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
@@ -728,6 +783,85 @@ function renderNav() {
   ];
   document.getElementById('nav').innerHTML = steps.map(s => `<button class="nav-btn ${currentSection===s.key?'active':''}" onclick="goTo('${s.key}')">${s.label}</button>`).join('');
 }
+let currentSetupTab = 'duos';
+function switchSetupTab(tab) {
+  currentSetupTab = tab;
+  document.getElementById('tab-btn-duos').classList.toggle('active', tab === 'duos');
+  document.getElementById('tab-btn-rules').classList.toggle('active', tab === 'rules');
+  document.getElementById('tab-pane-duos').classList.toggle('active', tab === 'duos');
+  document.getElementById('tab-pane-rules').classList.toggle('active', tab === 'rules');
+  if (tab === 'rules') renderRulesEditor();
+}
+
+const RULES_UI = [
+  { section: 'M1', title: 'Manche 1 · Le carré', fields: [
+    { key: 'perCorrect', label: 'Gain par bonne réponse', unit: '€' },
+    { key: 'bonusFull', label: 'Bonus si tableau complet (4/4)', unit: '€' },
+  ]},
+  { section: 'M2', title: 'Manche 2 · La roulette', fields: [
+    { key: 'perCorrect', label: 'Gain par bonne réponse', unit: '€' },
+    { key: 'bonusStreak', label: 'Bonus si série de 4 consécutives', unit: '€' },
+  ]},
+  { section: 'PF2', title: 'Photo Finish après Manche 2', fields: [
+    { key: 'winnerPrize', label: 'Prime au duo gagnant', unit: '€' },
+  ]},
+  { section: 'M3', title: 'Manche 3 · La battle', fields: [
+    { key: 'perCorrect', label: 'Gain par bonne réponse', unit: '€' },
+    { key: 'bonusFull', label: 'Bonus si tableau complet (5/5)', unit: '€' },
+    { key: 'perStolen', label: 'Gain par image volée', unit: '€' },
+    { key: 'bonusFullStolen', label: 'Bonus si tableau volé entièrement', unit: '€' },
+  ]},
+  { section: 'PF3', title: 'Photo Finish après Manche 3', fields: [
+    { key: 'winnerPrize', label: 'Prime au duo gagnant', unit: '€' },
+  ]},
+  { section: 'FINALE', title: 'Manche 4 · La finale', fields: [
+    { key: 'minToWin', label: 'Nb minimum de bonnes réponses (empoche cagnotte)', unit: '/ 12' },
+    { key: 'bonusThreshold', label: 'Nb pour bonus supplémentaire', unit: '/ 12' },
+    { key: 'bonusAmount', label: 'Montant du bonus supplémentaire', unit: '€' },
+    { key: 'jackpotThreshold', label: 'Nb pour jackpot (forfait)', unit: '/ 12' },
+    { key: 'jackpotAmount', label: 'Montant du jackpot forfaitaire', unit: '€' },
+  ]},
+];
+
+function renderRulesEditor() {
+  let html = '';
+  RULES_UI.forEach(sec => {
+    html += `<div class="rules-section">`;
+    html += `<div class="rules-section-title">${sec.title}</div>`;
+    html += `<div class="rules-grid">`;
+    sec.fields.forEach(f => {
+      const val = (state.rules[sec.section] && state.rules[sec.section][f.key] !== undefined)
+        ? state.rules[sec.section][f.key] : DEFAULT_RULES[sec.section][f.key];
+      html += `
+        <div class="rule-item">
+          <label>${f.label}</label>
+          <div class="rule-input-wrap">
+            <input type="number" min="0" value="${val}" onchange="updateRule('${sec.section}', '${f.key}', this.value)">
+            <span class="rule-unit">${f.unit}</span>
+          </div>
+        </div>
+      `;
+    });
+    html += `</div></div>`;
+  });
+  document.getElementById('rules-editor').innerHTML = html;
+}
+
+function updateRule(section, key, value) {
+  if (!state.rules[section]) state.rules[section] = {};
+  const n = parseInt(value, 10);
+  if (isNaN(n) || n < 0) return;
+  state.rules[section][key] = n;
+  saveState();
+}
+
+function resetRules() {
+  if (!confirm('Rétablir toutes les valeurs par défaut du barème ?')) return;
+  state.rules = deepCloneRules(DEFAULT_RULES);
+  saveState();
+  renderRulesEditor();
+}
+
 function renderSetup() {
   const html = state.duos.map((d, i) => `
     <div class="duo-panel ${d.isChampion?'champion':''}">
@@ -753,6 +887,8 @@ function toggleChampion(idx) {
   saveState(); renderSetup();
 }
 function renderM1() {
+  const el = document.getElementById('m1-recap');
+  if (el) el.textContent = `${RULES.M1.perCorrect} € par bonne réponse · Bonus ${RULES.M1.bonusFull} € si tableau complet (${RULES.M1.tableauSize}/${RULES.M1.tableauSize}) · Max ${RULES.M1.tableauSize} par duo`;
   const html = state.duos.map((d, i) => {
     const c = state.m1.correct[i];
     const bonus = c >= RULES.M1.tableauSize;
@@ -774,6 +910,8 @@ function renderM1() {
   document.getElementById('m1-duos').innerHTML = html;
 }
 function renderM2() {
+  const el = document.getElementById('m2-recap');
+  if (el) el.textContent = `${RULES.M2.perCorrect} € par bonne réponse · Bonus ${RULES.M2.bonusStreak} € par série de ${RULES.M2.streakLength} bonnes réponses à la suite`;
   if (!state.m2.wrong) state.m2.wrong = [0, 0, 0];
   const html = state.duos.map((d, i) => {
     const c = state.m2.correct[i];
@@ -858,6 +996,8 @@ function renderPF2() {
   pf2Container.innerHTML = html || '<div class="empty-state">Aucune égalité détectée — le photo finish n\'est pas nécessaire.</div>';
 }
 function renderM3() {
+  const el = document.getElementById('m3-recap');
+  if (el) el.textContent = `${RULES.M3.perCorrect} € par bonne réponse · Bonus ${RULES.M3.bonusFull} € si tableau complet (${RULES.M3.tableauSize}/${RULES.M3.tableauSize}) · ${RULES.M3.perStolen} € par image volée · Bonus ${RULES.M3.bonusFullStolen} € si tableau entièrement volé`;
   const duoA = state.duos[state.m3.duoIndexes[0]];
   const duoB = state.duos[state.m3.duoIndexes[1]];
   const tabsHtml = state.m3.tableaux.map((t, i) => {
