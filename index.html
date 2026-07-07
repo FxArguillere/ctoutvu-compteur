@@ -303,6 +303,7 @@
       <div class="actions">
         <div class="actions-left">
           <button class="btn ghost" onclick="loadFromHistory()">Charger émission</button>
+          <button class="btn danger" onclick="if(confirm('Effacer tous les scores et repartir de zéro ?')) resetShow()">Repartir de zéro</button>
         </div>
         <div class="actions-right">
           <button class="btn primary" onclick="startShow()">Démarrer l'émission ▶</button>
@@ -1106,6 +1107,12 @@ function toast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// Support du paramètre URL ?reset pour forcer un état neuf
+if (new URLSearchParams(window.location.search).has('reset')) {
+  localStorage.removeItem(STORAGE_KEY);
+  window.history.replaceState({}, '', window.location.pathname);
 }
 
 loadState();
