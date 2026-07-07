@@ -95,30 +95,6 @@
   .live-summary-item.eliminated .live-summary-status { color: var(--red); }
   .live-summary-item.tie .live-summary-status { color: var(--purple); }
 
-  .arrival-grid { display: flex; gap: 14px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
-  .arrival-card { padding: 14px 20px; border-radius: 10px; min-width: 200px; text-align: center; }
-  .arrival-card.partie { background: rgba(46, 204, 113, 0.10); border: 2px solid var(--green); }
-  .arrival-card.reportee { background: rgba(255, 167, 38, 0.10); border: 2px solid var(--accent); }
-  .arrival-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-  .arrival-total { font-size: 40px; font-weight: 800; line-height: 1; margin: 4px 0; }
-  .arrival-card.partie .arrival-total { color: var(--green); }
-  .arrival-card.reportee .arrival-total { color: var(--accent); }
-
-  .result-grid { display: flex; gap: 14px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
-  .result-card { padding: 16px 22px; border-radius: 10px; min-width: 240px; text-align: center; border: 2px solid var(--border); background: var(--panel-2); }
-  .result-card.partie { border-color: var(--green); background: rgba(46, 204, 113, 0.08); }
-  .result-card.cumulee.cumul { border-color: var(--green); background: rgba(46, 204, 113, 0.12); }
-  .result-card.cumulee.bonus { border-color: var(--purple); background: rgba(162, 89, 255, 0.12); }
-  .result-card.cumulee.jackpot { border-color: var(--accent); background: rgba(255, 167, 38, 0.15); }
-  .result-card.cumulee.zero { border-color: var(--red); background: rgba(231, 76, 60, 0.08); opacity: 0.8; }
-  .result-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-  .result-total { font-size: 44px; font-weight: 800; line-height: 1; margin: 6px 0; }
-  .result-card.partie .result-total { color: var(--green); }
-  .result-card.cumulee.cumul .result-total { color: var(--green); }
-  .result-card.cumulee.bonus .result-total { color: var(--purple); }
-  .result-card.cumulee.jackpot .result-total { color: var(--accent); text-shadow: 0 0 15px rgba(255, 167, 38, 0.5); }
-  .result-card.cumulee.zero .result-total { color: var(--red); }
-  .result-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
   .duos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .duos-grid.two { grid-template-columns: repeat(2, 1fr); }
   .duos-grid.one { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
@@ -189,12 +165,6 @@
   .checkbox { display: flex; align-items: center; gap: 8px; cursor: pointer; }
   .checkbox input { width: 18px; height: 18px; cursor: pointer; }
 
-  .ranking { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-  .rank-item { padding: 10px 14px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; }
-  .rank-item.rank-1 { border-color: var(--green); }
-  .rank-item.rank-2 { border-color: var(--blue); }
-  .rank-item.rank-3 { border-color: var(--red); opacity: 0.7; }
-
   .finale-counter { text-align: center; padding: 20px; }
   .finale-count { font-size: 120px; font-weight: 800; color: var(--accent); line-height: 1; margin: 10px 0; }
   .finale-tier { font-size: 32px; font-weight: 700; margin: 10px 0; }
@@ -204,6 +174,31 @@
   .finale-tier.jackpot { color: var(--accent); text-shadow: 0 0 20px var(--accent); }
   .finale-buttons { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
   .finale-btn { font-size: 32px; width: 80px; height: 80px; padding: 0; border-radius: 50%; }
+
+  .arrival-grid { display: flex; gap: 14px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+  .arrival-card { padding: 14px 20px; border-radius: 10px; min-width: 200px; text-align: center; }
+  .arrival-card.partie { background: rgba(46, 204, 113, 0.10); border: 2px solid var(--green); }
+  .arrival-card.reportee { background: rgba(255, 167, 38, 0.10); border: 2px solid var(--accent); }
+  .arrival-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+  .arrival-total { font-size: 40px; font-weight: 800; line-height: 1; margin: 4px 0; }
+  .arrival-card.partie .arrival-total { color: var(--green); }
+  .arrival-card.reportee .arrival-total { color: var(--accent); }
+
+  .result-grid { display: flex; gap: 14px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+  .result-card { padding: 16px 22px; border-radius: 10px; min-width: 240px; text-align: center; border: 2px solid var(--border); background: var(--panel-2); }
+  .result-card.partie { border-color: var(--green); background: rgba(46, 204, 113, 0.08); }
+  .result-card.cumulee.cumul { border-color: var(--green); background: rgba(46, 204, 113, 0.12); }
+  .result-card.cumulee.bonus { border-color: var(--purple); background: rgba(162, 89, 255, 0.12); }
+  .result-card.cumulee.jackpot { border-color: var(--accent); background: rgba(255, 167, 38, 0.15); }
+  .result-card.cumulee.zero { border-color: var(--red); background: rgba(231, 76, 60, 0.08); opacity: 0.8; }
+  .result-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+  .result-total { font-size: 44px; font-weight: 800; line-height: 1; margin: 6px 0; }
+  .result-card.partie .result-total { color: var(--green); }
+  .result-card.cumulee.cumul .result-total { color: var(--green); }
+  .result-card.cumulee.bonus .result-total { color: var(--purple); }
+  .result-card.cumulee.jackpot .result-total { color: var(--accent); text-shadow: 0 0 15px rgba(255, 167, 38, 0.5); }
+  .result-card.cumulee.zero .result-total { color: var(--red); }
+  .result-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
   table { width: 100%; border-collapse: collapse; }
   th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
@@ -220,24 +215,15 @@
   }
   .toast.show { opacity: 1; }
 
-  /* ==========================================================
-     MODE TÉLÉPHONE — 720px et moins
-     Navigation en bas, boutons XXL, layout portrait
-     ========================================================== */
+  /* Mode téléphone */
   @media (max-width: 720px) {
     body { padding: 8px; padding-bottom: 90px; }
     .container { max-width: 100%; }
-
-    header {
-      flex-direction: column; gap: 10px; padding: 10px 12px;
-      position: sticky; top: 0; z-index: 100;
-    }
+    header { flex-direction: column; gap: 10px; padding: 10px 12px; position: sticky; top: 0; z-index: 100; }
     .logo-wrap { justify-content: center; }
     .logo-css .top { font-size: 18px; }
     .logo-css .bottom { font-size: 22px; }
     .logo-img { height: 42px; }
-
-    /* Nav en bas de l'écran, sticky */
     nav.nav {
       position: fixed; bottom: 0; left: 0; right: 0;
       background: var(--panel); border-top: 1px solid var(--border);
@@ -245,52 +231,33 @@
       justify-content: space-around; z-index: 100;
       box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
     }
-    .nav-btn {
-      padding: 8px 6px; font-size: 11px; letter-spacing: 0;
-      flex: 1; min-width: 0; border-radius: 6px;
-    }
-
-    /* Titre et cartes */
+    .nav-btn { padding: 8px 6px; font-size: 11px; letter-spacing: 0; flex: 1; min-width: 0; border-radius: 6px; }
     h2 { font-size: 16px; margin-bottom: 12px; text-align: center; }
     .card { padding: 12px; margin-bottom: 12px; border-radius: 10px; }
-
-    /* Duos empilés verticalement */
     .duos-grid, .duos-grid.two, .duos-grid.one { grid-template-columns: 1fr; gap: 10px; }
-
-    /* Carte duo compacte */
     .duo-panel { padding: 12px; }
     .duo-name { font-size: 18px; }
     .duo-count { font-size: 44px; margin: 2px 0; }
     .duo-total { font-size: 24px; margin: 6px 0 2px 0; }
     .duo-cumul-value { font-size: 20px; }
-
-    /* Boutons XXL pour usage tactile */
     .btn { padding: 14px 16px; font-size: 14px; min-height: 48px; letter-spacing: 0.5px; }
     .btn.correct { padding: 16px; font-size: 16px; min-height: 56px; }
     .btn.wrong { padding: 12px; min-height: 44px; }
     .btn.steal { padding: 14px; min-height: 50px; }
     .btn.small { padding: 8px 12px; font-size: 12px; min-height: 36px; }
-
-    /* Manche 3 : tableaux empilés */
     .tab-grid { grid-template-columns: 1fr; }
     .tab-body { grid-template-columns: 1fr 1fr; gap: 6px; }
     .tab-side { padding: 8px; }
     .tab-count { font-size: 30px; }
     .tab-name { font-size: 12px; }
     .tab-header { font-size: 12px; }
-
-    /* Actions du bas de page */
     .actions { flex-direction: column-reverse; gap: 8px; }
     .actions-left, .actions-right { flex-direction: column; width: 100%; }
     .actions-left .btn, .actions-right .btn { width: 100%; }
-
-    /* Live summary : cartes empilées */
     .live-summary-grid, .live-summary-grid.two { grid-template-columns: 1fr; }
     .live-summary-item { padding: 10px; }
     .live-summary-name { font-size: 16px; }
     .live-summary-total { font-size: 22px; }
-
-    /* Finale : compteur adapté */
     .finale-count { font-size: 100px; }
     .finale-tier { font-size: 24px; }
     .finale-btn { width: 70px; height: 70px; font-size: 28px; }
@@ -299,17 +266,11 @@
     .arrival-total { font-size: 34px; }
     .result-total { font-size: 38px; }
     .result-grid { flex-direction: column; }
-
-    /* Récap : table à défilement horizontal */
     table { font-size: 12px; }
     th, td { padding: 6px 8px; }
-
-    /* Setup : inputs compacts */
     .field { margin-bottom: 8px; }
-    input, select { padding: 12px; font-size: 16px; }  /* 16px pour éviter le zoom iOS */
+    input, select { padding: 12px; font-size: 16px; }
   }
-
-  /* Très petits écrans (iPhone SE, etc.) */
   @media (max-width: 380px) {
     .nav-btn { padding: 6px 3px; font-size: 10px; }
     .duo-count { font-size: 36px; }
@@ -331,7 +292,6 @@
     <nav class="nav" id="nav"></nav>
   </header>
 
-  <!-- ================= SETUP ================= -->
   <section id="section-setup" class="active">
     <h2>Configuration de l'émission</h2>
     <div class="card">
@@ -351,7 +311,6 @@
     </div>
   </section>
 
-  <!-- ================= MANCHE 1 ================= -->
   <section id="section-m1">
     <h2>Manche 1 — Le carré</h2>
     <div class="card">
@@ -370,7 +329,6 @@
     </div>
   </section>
 
-  <!-- ================= MANCHE 2 ================= -->
   <section id="section-m2">
     <h2>Manche 2 — La roulette</h2>
     <div class="card">
@@ -390,14 +348,13 @@
     </div>
   </section>
 
-  <!-- ================= PHOTO FINISH 2 ================= -->
   <section id="section-pf2">
     <h2>Photo Finish — Départage après Manche 2</h2>
     <div class="card">
       <p style="color:var(--muted);font-size:13px;">
         25 € au duo qui trouve la bonne réponse en premier. Utilisé uniquement en cas d'égalité pour l'élimination.
       </p>
-      <div class="duos-grid" id="pf2-duos"></div>
+      <div id="pf2-duos"></div>
       <div class="actions">
         <div class="actions-left">
           <button class="btn ghost small" onclick="skipPF2()">Sauter (pas de départage)</button>
@@ -410,7 +367,6 @@
     </div>
   </section>
 
-  <!-- ================= MANCHE 3 ================= -->
   <section id="section-m3">
     <h2>Manche 3 — La battle</h2>
     <div class="card">
@@ -429,7 +385,6 @@
     </div>
   </section>
 
-  <!-- ================= PHOTO FINISH 3 ================= -->
   <section id="section-pf3">
     <h2>Photo Finish — Départage après Manche 3</h2>
     <div class="card">
@@ -448,7 +403,6 @@
     </div>
   </section>
 
-  <!-- ================= FINALE ================= -->
   <section id="section-finale">
     <h2>Manche 4 — La finale</h2>
     <div class="card">
@@ -461,7 +415,7 @@
           <button class="btn primary finale-btn" onclick="finaleDelta(1)">+</button>
         </div>
         <div class="finale-tier" id="finale-tier">Aucun gain</div>
-        <div style="color:var(--muted);font-size:13px;margin-top:10px;" id="finale-detail"></div>
+        <div id="finale-detail"></div>
       </div>
       <div class="actions">
         <div class="actions-right" style="margin-left:auto;">
@@ -471,7 +425,6 @@
     </div>
   </section>
 
-  <!-- ================= RECAP ================= -->
   <section id="section-recap">
     <h2>Récapitulatif de l'émission</h2>
     <div class="card">
@@ -488,7 +441,6 @@
     </div>
   </section>
 
-  <!-- ================= HISTORY ================= -->
   <section id="section-history">
     <h2>Historique des émissions</h2>
     <div class="card" id="history-list"></div>
@@ -499,11 +451,6 @@
 <div class="toast" id="toast"></div>
 
 <script>
-/* ================================================================
-   ÉTAT DE L'APPLICATION
-   Persisté en localStorage à chaque modification.
-================================================================ */
-
 const STORAGE_KEY = 'ctv-compteur-v1';
 const HISTORY_KEY = 'ctv-history-v1';
 
@@ -513,24 +460,14 @@ const RULES = {
   PF2: { winnerPrize: 25 },
   M3: { perCorrect: 50, bonusFull: 100, perStolen: 50, bonusFullStolen: 100, tableauSize: 5, categories: 4 },
   PF3: { winnerPrize: 50 },
-  FINALE: {
-    minToWin: 8,
-    bonusThreshold: 10,
-    bonusAmount: 500,
-    jackpotThreshold: 12,
-    jackpotAmount: 2500,
-  }
+  FINALE: { minToWin: 8, bonusThreshold: 10, bonusAmount: 500, jackpotThreshold: 12, jackpotAmount: 2500 }
 };
 
 let state = null;
 let currentSection = 'setup';
 
-function duoLetter(idx) {
-  return String.fromCharCode(65 + idx); // 0 -> A, 1 -> B, 2 -> C
-}
-function duoLabel(idx) {
-  return 'Duo ' + duoLetter(idx);
-}
+function duoLetter(idx) { return String.fromCharCode(65 + idx); }
+function duoLabel(idx) { return 'Duo ' + duoLetter(idx); }
 
 function initState() {
   return {
@@ -565,20 +502,8 @@ function loadState() {
   if (saved) { try { state = JSON.parse(saved); return; } catch(e){} }
   state = initState();
 }
-function saveState() {
-  state.updatedAt = Date.now();
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
-function resetShow() {
-  state = initState();
-  saveState();
-  currentSection = 'setup';
-  render();
-}
-
-/* ================================================================
-   CALCULS
-================================================================ */
+function saveState() { state.updatedAt = Date.now(); localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function resetShow() { state = initState(); saveState(); currentSection = 'setup'; render(); }
 
 function m1Total(idx) {
   const c = state.m1.correct[idx];
@@ -590,9 +515,7 @@ function m2Total(idx) {
   const bonus = state.m2.bonusCount[idx] * RULES.M2.bonusStreak;
   return c * RULES.M2.perCorrect + bonus;
 }
-function pf2Bonus(idx) {
-  return state.pf2.winner === idx ? RULES.PF2.winnerPrize : 0;
-}
+function pf2Bonus(idx) { return state.pf2.winner === idx ? RULES.PF2.winnerPrize : 0; }
 function m3TotalForSlot(slotIdx) {
   let total = 0;
   state.m3.tableaux.forEach(t => {
@@ -611,44 +534,27 @@ function m3TotalForDuo(duoIdx) {
   if (slot === -1) return 0;
   return m3TotalForSlot(slot);
 }
-function pf3Bonus(duoIdx) {
-  return state.pf3.winner === duoIdx ? RULES.PF3.winnerPrize : 0;
-}
+function pf3Bonus(duoIdx) { return state.pf3.winner === duoIdx ? RULES.PF3.winnerPrize : 0; }
 function cagnotteDuoBeforeFinale(idx) {
   if (idx === state.eliminatedAfterM3) return 0;
   return m1Total(idx) + m2Total(idx) + pf2Bonus(idx) + m3TotalForDuo(idx) + pf3Bonus(idx);
 }
-function cagnotteDuoAfterM2(idx) {
-  return m1Total(idx) + m2Total(idx) + pf2Bonus(idx);
-}
+function cagnotteDuoAfterM2(idx) { return m1Total(idx) + m2Total(idx) + pf2Bonus(idx); }
 
 function finaleResult() {
   const c = state.finale.correct;
-  if (c < RULES.FINALE.minToWin) return { tier: 'zero', label: 'Aucun gain', prize: 0, cumulative: false };
   const cagnottePartie = state.finalist !== null ? cagnotteDuoBeforeFinale(state.finalist) : 0;
-  const cagnotteReportee = state.cagnotteReportee || 0;
-  if (c >= RULES.FINALE.jackpotThreshold) {
-    return { tier: 'jackpot', label: 'Jackpot 2 500 €', prize: RULES.FINALE.jackpotAmount, cumulative: false, cagnottePartie, cagnotteReportee };
-  }
-  if (c >= RULES.FINALE.bonusThreshold) {
-    return { tier: 'bonus', label: 'Cagnotte + 500 €', prize: cagnottePartie + cagnotteReportee + RULES.FINALE.bonusAmount, cumulative: true, cagnottePartie, cagnotteReportee, bonus: RULES.FINALE.bonusAmount };
-  }
-  return { tier: 'cumul', label: 'Cagnotte totale', prize: cagnottePartie + cagnotteReportee, cumulative: true, cagnottePartie, cagnotteReportee };
+  if (c < RULES.FINALE.minToWin) return { tier: 'zero', label: 'Aucun gain', prize: 0, cagnottePartie };
+  if (c >= RULES.FINALE.jackpotThreshold) return { tier: 'jackpot', label: 'Jackpot 2 500 €', prize: RULES.FINALE.jackpotAmount, cagnottePartie };
+  if (c >= RULES.FINALE.bonusThreshold) return { tier: 'bonus', label: 'Cagnotte + 500 €', prize: cagnottePartie + RULES.FINALE.bonusAmount, cagnottePartie };
+  return { tier: 'cumul', label: 'Cagnotte de la partie', prize: cagnottePartie, cagnottePartie };
 }
 
-function rankingsAfterM2() {
-  return [0,1,2].map(i => ({ idx: i, total: cagnotteDuoAfterM2(i) }))
-    .sort((a,b) => b.total - a.total);
-}
+function rankingsAfterM2() { return [0,1,2].map(i => ({ idx: i, total: cagnotteDuoAfterM2(i) })).sort((a,b) => b.total - a.total); }
 function rankingsAfterM3() {
   const eligible = [0,1,2].filter(i => i !== state.eliminatedAfterM2);
-  return eligible.map(i => ({ idx: i, total: cagnotteDuoBeforeFinale(i) }))
-    .sort((a,b) => b.total - a.total);
+  return eligible.map(i => ({ idx: i, total: cagnotteDuoBeforeFinale(i) })).sort((a,b) => b.total - a.total);
 }
-
-/* ================================================================
-   ACTIONS DES BOUTONS
-================================================================ */
 
 function startShow() {
   for (let i = 0; i < 3; i++) {
@@ -662,16 +568,8 @@ function startShow() {
   goTo('m1');
 }
 
-function addM1(idx) {
-  if (state.m1.correct[idx] >= RULES.M1.tableauSize) return;
-  state.m1.correct[idx]++;
-  saveState(); render();
-}
-function subM1(idx) {
-  if (state.m1.correct[idx] <= 0) return;
-  state.m1.correct[idx]--;
-  saveState(); render();
-}
+function addM1(idx) { if (state.m1.correct[idx] >= RULES.M1.tableauSize) return; state.m1.correct[idx]++; saveState(); render(); }
+function subM1(idx) { if (state.m1.correct[idx] <= 0) return; state.m1.correct[idx]--; saveState(); render(); }
 
 function addM2(idx) {
   state.m2.correct[idx]++;
@@ -706,35 +604,12 @@ function proceedAfterM2() {
   const rk = rankingsAfterM2();
   const lowestTotal = rk[2].total;
   const tied = rk.filter(r => r.total === lowestTotal);
-  if (tied.length >= 2) {
-    goTo('pf2');
-  } else {
-    state.pf2.played = false;
-    state.eliminatedAfterM2 = rk[2].idx;
-    saveState();
-    setupM3();
-    goTo('m3');
-  }
+  if (tied.length >= 2) { goTo('pf2'); }
+  else { state.pf2.played = false; state.eliminatedAfterM2 = rk[2].idx; saveState(); setupM3(); goTo('m3'); }
 }
-
-function awardPF2(duoIdx) {
-  state.pf2.winner = duoIdx;
-  state.pf2.played = true;
-  saveState(); render();
-}
-function skipPF2() {
-  state.pf2.winner = null;
-  state.pf2.played = true;
-  saveState();
-  proceedToM3();
-}
-function proceedToM3() {
-  const rk = rankingsAfterM2();
-  state.eliminatedAfterM2 = rk[2].idx;
-  saveState();
-  setupM3();
-  goTo('m3');
-}
+function awardPF2(duoIdx) { state.pf2.winner = duoIdx; state.pf2.played = true; saveState(); render(); }
+function skipPF2() { state.pf2.winner = null; state.pf2.played = true; saveState(); proceedToM3(); }
+function proceedToM3() { const rk = rankingsAfterM2(); state.eliminatedAfterM2 = rk[2].idx; saveState(); setupM3(); goTo('m3'); }
 function setupM3() {
   const eligible = [0,1,2].filter(i => i !== state.eliminatedAfterM2);
   state.m3.duoIndexes = eligible;
@@ -746,70 +621,30 @@ function setupM3() {
   ];
   saveState();
 }
-
 function addM3Correct(tabIdx) {
   const t = state.m3.tableaux[tabIdx];
   if (t.correct + t.stolen >= RULES.M3.tableauSize) return;
-  t.correct++;
-  saveState(); render();
+  t.correct++; saveState(); render();
 }
-function subM3Correct(tabIdx) {
-  const t = state.m3.tableaux[tabIdx];
-  if (t.correct <= 0) return;
-  t.correct--;
-  saveState(); render();
-}
+function subM3Correct(tabIdx) { const t = state.m3.tableaux[tabIdx]; if (t.correct <= 0) return; t.correct--; saveState(); render(); }
 function addM3Steal(tabIdx) {
   const t = state.m3.tableaux[tabIdx];
   const maxSteal = RULES.M3.tableauSize - t.correct;
   if (t.stolen >= maxSteal) return;
-  t.stolen++;
-  saveState(); render();
+  t.stolen++; saveState(); render();
 }
-function subM3Steal(tabIdx) {
-  const t = state.m3.tableaux[tabIdx];
-  if (t.stolen <= 0) return;
-  t.stolen--;
-  saveState(); render();
-}
+function subM3Steal(tabIdx) { const t = state.m3.tableaux[tabIdx]; if (t.stolen <= 0) return; t.stolen--; saveState(); render(); }
 
 function proceedAfterM3() {
   const rk = rankingsAfterM3();
-  if (rk.length === 2 && rk[0].total === rk[1].total) {
-    goTo('pf3');
-  } else {
-    state.pf3.played = false;
-    state.eliminatedAfterM3 = rk[1].idx;
-    state.finalist = rk[0].idx;
-    saveState();
-    goTo('finale');
-  }
+  if (rk.length === 2 && rk[0].total === rk[1].total) { goTo('pf3'); }
+  else { state.pf3.played = false; state.eliminatedAfterM3 = rk[1].idx; state.finalist = rk[0].idx; saveState(); goTo('finale'); }
 }
-function awardPF3(duoIdx) {
-  state.pf3.winner = duoIdx;
-  state.pf3.played = true;
-  saveState(); render();
-}
-function skipPF3() {
-  state.pf3.winner = null;
-  state.pf3.played = true;
-  saveState();
-  proceedToFinale();
-}
-function proceedToFinale() {
-  const rk = rankingsAfterM3();
-  state.finalist = rk[0].idx;
-  state.eliminatedAfterM3 = rk[1].idx;
-  saveState();
-  goTo('finale');
-}
+function awardPF3(duoIdx) { state.pf3.winner = duoIdx; state.pf3.played = true; saveState(); render(); }
+function skipPF3() { state.pf3.winner = null; state.pf3.played = true; saveState(); proceedToFinale(); }
+function proceedToFinale() { const rk = rankingsAfterM3(); state.finalist = rk[0].idx; state.eliminatedAfterM3 = rk[1].idx; saveState(); goTo('finale'); }
 
-function finaleDelta(d) {
-  const nc = state.finale.correct + d;
-  if (nc < 0 || nc > 12) return;
-  state.finale.correct = nc;
-  saveState(); render();
-}
+function finaleDelta(d) { const nc = state.finale.correct + d; if (nc < 0 || nc > 12) return; state.finale.correct = nc; saveState(); render(); }
 
 function resetManche(n) {
   if (!confirm('Réinitialiser la Manche ' + n + ' ?')) return;
@@ -825,10 +660,6 @@ function resetManche(n) {
   }
   saveState(); render();
 }
-
-/* ================================================================
-   HISTORIQUE
-================================================================ */
 
 function saveShow() {
   const history = getHistory();
@@ -850,9 +681,7 @@ function getHistory() {
 function loadFromHistory() {
   const history = getHistory();
   if (history.length === 0) { toast('Aucune émission dans l\'historique'); return; }
-  const list = history.slice().reverse().map((h, i) =>
-    `${i+1}. ${h.date} · ${h.winnerLabel || 'sans finaliste'} · ${h.result ? h.result.prize : 0}€`
-  ).join('\n');
+  const list = history.slice().reverse().map((h, i) => `${i+1}. ${h.date} · ${h.winnerLabel || 'sans finaliste'} · ${h.result ? h.result.prize : 0}€`).join('\n');
   const pick = prompt('Émissions enregistrées :\n' + list + '\n\nNuméro à charger :');
   const idx = parseInt(pick, 10) - 1;
   if (isNaN(idx) || idx < 0 || idx >= history.length) return;
@@ -865,36 +694,21 @@ function deleteHistory(id) {
   localStorage.setItem(HISTORY_KEY, JSON.stringify(h));
   renderHistory();
 }
-
 function exportSession() {
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url;
-  a.download = 'ctv-emission-' + state.date + '.json';
-  a.click();
+  a.href = url; a.download = 'ctv-emission-' + state.date + '.json'; a.click();
   URL.revokeObjectURL(url);
 }
 
-/* ================================================================
-   NAVIGATION
-================================================================ */
-
-function goTo(name) {
-  currentSection = name;
-  render();
-}
-
-/* ================================================================
-   RENDER
-================================================================ */
+function goTo(name) { currentSection = name; render(); }
 
 function render() {
   renderNav();
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   const el = document.getElementById('section-' + currentSection);
   if (el) el.classList.add('active');
-
   if (currentSection === 'setup') renderSetup();
   if (currentSection === 'm1') renderM1();
   if (currentSection === 'm2') renderM2();
@@ -905,24 +719,14 @@ function render() {
   if (currentSection === 'recap') renderRecap();
   if (currentSection === 'history') renderHistory();
 }
-
 function renderNav() {
   const steps = [
-    { key: 'setup', label: 'Setup' },
-    { key: 'm1', label: 'M1' },
-    { key: 'm2', label: 'M2' },
-    { key: 'pf2', label: 'PF2' },
-    { key: 'm3', label: 'M3' },
-    { key: 'pf3', label: 'PF3' },
-    { key: 'finale', label: 'Finale' },
-    { key: 'recap', label: 'Récap' },
-    { key: 'history', label: 'Historique' },
+    { key: 'setup', label: 'Setup' }, { key: 'm1', label: 'M1' }, { key: 'm2', label: 'M2' },
+    { key: 'pf2', label: 'PF2' }, { key: 'm3', label: 'M3' }, { key: 'pf3', label: 'PF3' },
+    { key: 'finale', label: 'Finale' }, { key: 'recap', label: 'Récap' }, { key: 'history', label: 'Historique' },
   ];
-  document.getElementById('nav').innerHTML = steps.map(s =>
-    `<button class="nav-btn ${currentSection===s.key?'active':''}" onclick="goTo('${s.key}')">${s.label}</button>`
-  ).join('');
+  document.getElementById('nav').innerHTML = steps.map(s => `<button class="nav-btn ${currentSection===s.key?'active':''}" onclick="goTo('${s.key}')">${s.label}</button>`).join('');
 }
-
 function renderSetup() {
   const html = state.duos.map((d, i) => `
     <div class="duo-panel ${d.isChampion?'champion':''}">
@@ -941,18 +745,12 @@ function renderSetup() {
   document.getElementById('cagnotte-reportee-block').style.display = anyChampion ? 'block' : 'none';
   document.getElementById('cagnotte-reportee').value = state.cagnotteReportee || 0;
 }
-
 function toggleChampion(idx) {
   const checked = document.getElementById('duo-champion-' + idx).checked;
-  if (checked) {
-    state.duos.forEach((d, i) => { d.isChampion = (i === idx); });
-  } else {
-    state.duos[idx].isChampion = false;
-  }
-  saveState();
-  renderSetup();
+  if (checked) { state.duos.forEach((d, i) => { d.isChampion = (i === idx); }); }
+  else { state.duos[idx].isChampion = false; }
+  saveState(); renderSetup();
 }
-
 function renderM1() {
   const html = state.duos.map((d, i) => {
     const c = state.m1.correct[i];
@@ -961,7 +759,7 @@ function renderM1() {
     return `
       <div class="duo-panel ${d.isChampion?'champion':''}">
         <div class="duo-header">Duo ${duoLetter(i)} ${d.isChampion?'<span class="badge champion">Champion</span>':''}</div>
-        <div class="duo-name">${d.name || (duoLabel(i))}</div>
+        <div class="duo-name">${d.name || duoLabel(i)}</div>
         <div class="duo-members">${d.membre1||''}${d.membre1&&d.membre2?' & ':''}${d.membre2||''}</div>
         <div class="duo-count">${c}<span style="font-size:20px;color:var(--muted);"> /4</span></div>
         ${bonus ? '<span class="badge bonus">Tableau complet +50 €</span>' : ''}
@@ -974,7 +772,6 @@ function renderM1() {
   }).join('');
   document.getElementById('m1-duos').innerHTML = html;
 }
-
 function renderM2() {
   if (!state.m2.wrong) state.m2.wrong = [0, 0, 0];
   const html = state.duos.map((d, i) => {
@@ -989,7 +786,7 @@ function renderM2() {
     return `
       <div class="duo-panel ${d.isChampion?'champion':''}">
         <div class="duo-header">Duo ${duoLetter(i)} ${d.isChampion?'<span class="badge champion">Champion</span>':''}</div>
-        <div class="duo-name">${d.name || (duoLabel(i))}</div>
+        <div class="duo-name">${d.name || duoLabel(i)}</div>
         <div class="duo-count">${c}</div>
         <div class="streak">${stars}</div>
         <div style="color:var(--muted);font-size:11px;margin-bottom:6px;">Bonus obtenus : ${bonusCount} · +${bonusCount*50} €</div>
@@ -1007,8 +804,6 @@ function renderM2() {
       </div>
     `;
   }).join('');
-
-  // Live summary en bas : qualifiés / éliminé, dans l'ordre A/B/C
   const rk = rankingsAfterM2();
   const rankByIdx = {}; rk.forEach((r, pos) => { rankByIdx[r.idx] = pos; });
   const lowestTotal = rk[2].total;
@@ -1020,21 +815,11 @@ function renderM2() {
   state.duos.forEach((d, i) => {
     const pos = rankByIdx[i];
     const cumul = m1Total(i) + m2Total(i);
-    let status = '';
-    let cls = '';
-    if (allTied) {
-      status = 'Photo Finish à 3';
-      cls = 'tie';
-    } else if (tiedAtBottom.length === 2 && cumul === lowestTotal) {
-      status = 'Photo Finish';
-      cls = 'tie';
-    } else if (pos < 2) {
-      status = 'Qualifié pour la battle';
-      cls = 'qualified';
-    } else {
-      status = 'Éliminé';
-      cls = 'eliminated';
-    }
+    let status = '', cls = '';
+    if (allTied) { status = 'Photo Finish à 3'; cls = 'tie'; }
+    else if (tiedAtBottom.length === 2 && cumul === lowestTotal) { status = 'Photo Finish'; cls = 'tie'; }
+    else if (pos < 2) { status = 'Qualifié pour la battle'; cls = 'qualified'; }
+    else { status = 'Éliminé'; cls = 'eliminated'; }
     summaryHtml += `
       <div class="live-summary-item ${cls}">
         <div class="live-summary-rank">Duo ${duoLetter(i)} · ${pos+1}<sup>e</sup></div>
@@ -1045,18 +830,13 @@ function renderM2() {
     `;
   });
   summaryHtml += '</div></div>';
-
   document.getElementById('m2-duos').innerHTML = '<div class="duos-grid">' + html + '</div>' + summaryHtml;
 }
-
 function renderPF2() {
   const rk = rankingsAfterM2();
   const lowestTotal = rk[2].total;
   const allTied = rk[0].total === rk[2].total;
-  const contenders = allTied
-    ? rk.map(r => r.idx)
-    : rk.filter(r => r.total === lowestTotal).map(r => r.idx);
-
+  const contenders = allTied ? rk.map(r => r.idx) : rk.filter(r => r.total === lowestTotal).map(r => r.idx);
   const html = contenders.map((i) => {
     const d = state.duos[i];
     const won = state.pf2.winner === i;
@@ -1072,17 +852,13 @@ function renderPF2() {
       </div>
     `;
   }).join('');
-
   const pf2Container = document.getElementById('pf2-duos');
   pf2Container.className = 'duos-grid' + (contenders.length === 2 ? ' two' : (contenders.length === 1 ? ' one' : ''));
   pf2Container.innerHTML = html || '<div class="empty-state">Aucune égalité détectée — le photo finish n\'est pas nécessaire.</div>';
 }
-
 function renderM3() {
   const duoA = state.duos[state.m3.duoIndexes[0]];
   const duoB = state.duos[state.m3.duoIndexes[1]];
-
-  // Génère les 4 cartes de tableaux
   const tabsHtml = state.m3.tableaux.map((t, i) => {
     const playerDuo = state.duos[state.m3.duoIndexes[t.playerSlot]];
     const stealerDuo = state.duos[state.m3.duoIndexes[1 - t.playerSlot]];
@@ -1096,7 +872,7 @@ function renderM3() {
         <div class="tab-header">Tableau ${i+1}</div>
         <div class="tab-body">
           <div class="tab-side player-side">
-            <div class="tab-role">Joue · ${playerDuo.name || (duoLabel(state.m3.duoIndexes[t.playerSlot]))}</div>
+            <div class="tab-role">Joue · ${playerDuo.name || duoLabel(state.m3.duoIndexes[t.playerSlot])}</div>
             <div class="tab-name">${playerName}</div>
             <div class="tab-count">${t.correct}<span class="tab-count-max">/5</span></div>
             ${bonusFull ? '<span class="badge bonus">+100 €</span>' : ''}
@@ -1104,7 +880,7 @@ function renderM3() {
             <button class="btn ghost small" onclick="subM3Correct(${i})">− 1</button>
           </div>
           <div class="tab-side stealer-side">
-            <div class="tab-role">Vole · ${stealerDuo.name || (duoLabel(state.m3.duoIndexes[1-t.playerSlot]))}</div>
+            <div class="tab-role">Vole · ${stealerDuo.name || duoLabel(state.m3.duoIndexes[1-t.playerSlot])}</div>
             <div class="tab-name">${stealerName}</div>
             <div class="tab-count" style="color:var(--blue);">${t.stolen}<span class="tab-count-max">/${maxSteal}</span></div>
             ${bonusFullStolen ? '<span class="badge bonus">Tableau volé +100 €</span>' : ''}
@@ -1115,17 +891,14 @@ function renderM3() {
       </div>
     `;
   }).join('');
-
-  // Génère la synthèse des totaux par duo
-  const totA = m3TotalForSlot(0);
-  const totB = m3TotalForSlot(1);
+  const totA = m3TotalForSlot(0), totB = m3TotalForSlot(1);
   const cumA = cagnotteDuoAfterM2(state.m3.duoIndexes[0]) + totA;
   const cumB = cagnotteDuoAfterM2(state.m3.duoIndexes[1]) + totB;
   const totalsHtml = `
     <div class="duos-grid two" style="margin-top:20px;">
       <div class="duo-panel ${duoA.isChampion?'champion':''}">
         <div class="duo-header">Duo ${duoLetter(state.m3.duoIndexes[0])} ${duoA.isChampion?'<span class="badge champion">Champion</span>':''}</div>
-        <div class="duo-name">${duoA.name || (duoLabel(state.m3.duoIndexes[0]))}</div>
+        <div class="duo-name">${duoA.name || duoLabel(state.m3.duoIndexes[0])}</div>
         <div class="duo-total">${totA} €</div>
         <div class="duo-total-label">Total manche 3</div>
         <div class="duo-cumul-value">${cumA} €</div>
@@ -1133,7 +906,7 @@ function renderM3() {
       </div>
       <div class="duo-panel ${duoB.isChampion?'champion':''}">
         <div class="duo-header">Duo ${duoLetter(state.m3.duoIndexes[1])} ${duoB.isChampion?'<span class="badge champion">Champion</span>':''}</div>
-        <div class="duo-name">${duoB.name || (duoLabel(state.m3.duoIndexes[1]))}</div>
+        <div class="duo-name">${duoB.name || duoLabel(state.m3.duoIndexes[1])}</div>
         <div class="duo-total">${totB} €</div>
         <div class="duo-total-label">Total manche 3</div>
         <div class="duo-cumul-value">${cumB} €</div>
@@ -1141,8 +914,6 @@ function renderM3() {
       </div>
     </div>
   `;
-
-  // Live summary : finaliste / éliminé, dans l'ordre des duos en lice (A/B/C)
   const rk = rankingsAfterM3();
   const rankByIdx = {}; rk.forEach((r, pos) => { rankByIdx[r.idx] = pos; });
   const tied = rk.length === 2 && rk[0].total === rk[1].total;
@@ -1154,18 +925,10 @@ function renderM3() {
     const d = state.duos[i];
     const pos = rankByIdx[i];
     const cumul = cagnotteDuoBeforeFinale(i);
-    let status = '';
-    let cls = '';
-    if (tied) {
-      status = 'Photo Finish à jouer';
-      cls = 'tie';
-    } else if (pos === 0) {
-      status = 'Finaliste';
-      cls = 'qualified';
-    } else {
-      status = 'Éliminé';
-      cls = 'eliminated';
-    }
+    let status = '', cls = '';
+    if (tied) { status = 'Photo Finish à jouer'; cls = 'tie'; }
+    else if (pos === 0) { status = 'Finaliste'; cls = 'qualified'; }
+    else { status = 'Éliminé'; cls = 'eliminated'; }
     summaryHtml += `
       <div class="live-summary-item ${cls}">
         <div class="live-summary-rank">Duo ${duoLetter(i)} · ${pos+1}<sup>e</sup></div>
@@ -1176,11 +939,8 @@ function renderM3() {
     `;
   });
   summaryHtml += '</div></div>';
-
-  document.getElementById('m3-duos').innerHTML =
-    '<div class="tab-grid">' + tabsHtml + '</div>' + totalsHtml + summaryHtml;
+  document.getElementById('m3-duos').innerHTML = '<div class="tab-grid">' + tabsHtml + '</div>' + totalsHtml + summaryHtml;
 }
-
 function renderPF3() {
   const rk = rankingsAfterM3();
   const html = rk.map(({idx}) => {
@@ -1190,7 +950,7 @@ function renderPF3() {
     return `
       <div class="duo-panel ${won?'champion':''}">
         <div class="duo-header">Duo ${duoLetter(idx)}</div>
-        <div class="duo-name">${d.name || (duoLabel(idx))}</div>
+        <div class="duo-name">${d.name || duoLabel(idx)}</div>
         <div class="duo-cumul-value">${cumul} €</div>
         <div class="duo-cumul-label">Cumul total ${won ? '+ PF3' : ''}</div>
         ${won ? '<div style="color:var(--purple);font-weight:700;margin:8px 0;">Gagne le photo finish +50 €</div>' : ''}
@@ -1200,11 +960,12 @@ function renderPF3() {
   }).join('');
   document.getElementById('pf3-duos').innerHTML = html;
 }
-
 function renderFinale() {
   const duo = state.finalist !== null ? state.duos[state.finalist] : null;
+  const finalistIsChampion = duo !== null && duo.isChampion;
   const cagPartie = state.finalist !== null ? cagnotteDuoBeforeFinale(state.finalist) : 0;
   const cagReportee = state.cagnotteReportee || 0;
+  const showReported = finalistIsChampion && cagReportee > 0;
   document.getElementById('finale-duo-info').innerHTML = duo ? `
     <div class="duo-header">Finaliste</div>
     <div class="duo-name" style="color:var(--accent);">${duo.name || duoLabel(state.finalist)}</div>
@@ -1214,9 +975,9 @@ function renderFinale() {
         <div class="arrival-label">Cagnotte de la partie</div>
         <div class="arrival-total">${cagPartie} €</div>
       </div>
-      ${cagReportee > 0 ? `
+      ${showReported ? `
         <div class="arrival-card reportee">
-          <div class="arrival-label">Cagnotte reportée</div>
+          <div class="arrival-label">Cagnotte reportée (Champion)</div>
           <div class="arrival-total">${cagReportee} €</div>
         </div>
       ` : ''}
@@ -1227,49 +988,34 @@ function renderFinale() {
   const tierEl = document.getElementById('finale-tier');
   tierEl.className = 'finale-tier ' + r.tier;
   tierEl.textContent = r.tier === 'zero' ? 'Aucun gain' : r.label;
-
-  // Bloc bas : cagnotte totale de la partie + cagnotte totale cumulée
   const detail = document.getElementById('finale-detail');
-  if (r.tier === 'zero') {
-    detail.innerHTML = `
-      <div class="result-grid">
-        <div class="result-card partie">
-          <div class="result-label">Cagnotte totale de la partie</div>
-          <div class="result-total">${cagPartie} €</div>
-        </div>
-        <div class="result-card cumulee zero">
-          <div class="result-label">Cagnotte totale cumulée</div>
-          <div class="result-total">0 €</div>
-          <div class="result-note">Moins de 8 bonnes réponses — repart les mains vides</div>
-        </div>
-      </div>
-    `;
-  } else {
-    let cumulLabel = 'Cagnotte totale cumulée';
-    let cumulNote = '';
-    if (r.tier === 'cumul') {
-      cumulNote = `Cagnotte de la partie (${cagPartie} €)${cagReportee > 0 ? ` + reportée (${cagReportee} €)` : ''}`;
-    } else if (r.tier === 'bonus') {
-      cumulNote = `Cagnotte de la partie (${cagPartie} €)${cagReportee > 0 ? ` + reportée (${cagReportee} €)` : ''} + bonus 500 €`;
-    } else if (r.tier === 'jackpot') {
-      cumulNote = `Jackpot forfaitaire — la cagnotte n'est pas ajoutée`;
-    }
-    detail.innerHTML = `
-      <div class="result-grid">
-        <div class="result-card partie">
-          <div class="result-label">Cagnotte totale de la partie</div>
-          <div class="result-total">${cagPartie} €</div>
-        </div>
-        <div class="result-card cumulee ${r.tier}">
-          <div class="result-label">${cumulLabel}</div>
-          <div class="result-total">${r.prize} €</div>
-          <div class="result-note">${cumulNote}</div>
-        </div>
+  let card1Note = '';
+  if (r.tier === 'zero') card1Note = "Moins de 8 bonnes réponses";
+  else if (r.tier === 'cumul') card1Note = `${state.finale.correct} bonnes réponses — cagnotte de la partie`;
+  else if (r.tier === 'bonus') card1Note = `${state.finale.correct} bonnes réponses — cagnotte de la partie + 500 €`;
+  else if (r.tier === 'jackpot') card1Note = 'Jackpot atteint (12/12)';
+  const gainEmission = r.prize;
+  const cumulMulti = cagReportee + gainEmission;
+  let html = '<div class="result-grid">';
+  html += `
+    <div class="result-card cumulee ${r.tier}">
+      <div class="result-label">Gain de cette émission</div>
+      <div class="result-total">${gainEmission} €</div>
+      <div class="result-note">${card1Note}</div>
+    </div>
+  `;
+  if (showReported) {
+    html += `
+      <div class="result-card partie">
+        <div class="result-label">Cumul multi-émissions</div>
+        <div class="result-total">${cumulMulti} €</div>
+        <div class="result-note">Cagnotte reportée (${cagReportee} €) + gain de cette émission (${gainEmission} €)</div>
       </div>
     `;
   }
+  html += '</div>';
+  detail.innerHTML = html;
 }
-
 function renderRecap() {
   const r = finaleResult();
   const duo = state.finalist !== null ? state.duos[state.finalist] : null;
@@ -1310,7 +1056,6 @@ function renderRecap() {
   }
   document.getElementById('recap-content').innerHTML = html;
 }
-
 function renderHistory() {
   const history = getHistory();
   if (history.length === 0) {
@@ -1321,9 +1066,7 @@ function renderHistory() {
   let html = '';
   if (cumul.length > 0) {
     html += '<h3>Cumuls des champions</h3><table><thead><tr><th>Duo</th><th>Nombre d\'émissions gagnées</th><th>Cumul total</th></tr></thead><tbody>';
-    cumul.forEach(c => {
-      html += `<tr><td>${c.name}</td><td>${c.wins}</td><td><strong>${c.total} €</strong></td></tr>`;
-    });
+    cumul.forEach(c => { html += `<tr><td>${c.name}</td><td>${c.wins}</td><td><strong>${c.total} €</strong></td></tr>`; });
     html += '</tbody></table>';
   }
   html += '<h3 style="margin-top:24px;">Toutes les émissions</h3><table><thead><tr><th>Date</th><th>Finaliste</th><th>Bonnes réponses</th><th>Gain</th><th>Action</th></tr></thead><tbody>';
@@ -1340,7 +1083,6 @@ function renderHistory() {
   html += '</tbody></table>';
   document.getElementById('history-list').innerHTML = html;
 }
-
 function calcChampionCumul(history) {
   const map = {};
   history.forEach(h => {
@@ -1352,7 +1094,6 @@ function calcChampionCumul(history) {
   });
   return Object.values(map).sort((a,b) => b.total - a.total);
 }
-
 function finaleResultFor(h) {
   const orig = state;
   state = h;
@@ -1360,7 +1101,6 @@ function finaleResultFor(h) {
   state = orig;
   return r;
 }
-
 function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -1368,9 +1108,6 @@ function toast(msg) {
   setTimeout(() => t.classList.remove('show'), 2000);
 }
 
-/* ================================================================
-   INIT
-================================================================ */
 loadState();
 render();
 </script>
